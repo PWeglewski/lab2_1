@@ -23,10 +23,15 @@ public class BinarySearchTest {
 
     @Test(expected = IllegalArgumentException.class)
     public void shouldThrowIllegalArgumentException() throws Exception {
+        // given
         int key = 10;
         int[] seq = generateSequence(0);
 
+        // when
         BinarySearch.search(key, seq);
+
+        //then
+        // Should throw IllegalArgumentException
     }
 
     @Test
