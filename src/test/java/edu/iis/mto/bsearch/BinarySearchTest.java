@@ -35,40 +35,6 @@ public class BinarySearchTest {
     }
 
     @Test
-    public void shouldFindExistingElementSeqLengthOne() throws Exception {
-        // given
-        int[] seq = generateSequence(1);
-        int[] seqCopy = seq.clone();
-        int index = 0;
-        int value = seq[index];
-
-        // when
-        BinarySearch.search(index, seq);
-        SearchResult searchResult = BinarySearch.search(value, seq);
-
-        // then
-        assertThat(searchResult.isFound(), is(IS_FOUND_SUCCESS));
-        assertThat(searchResult.getPosition(), is(equalTo(index)));
-        assertThat(seq, is(equalTo(seqCopy)));
-    }
-
-    @Test
-    public void shouldNotFindElementSeqLengthOne() throws Exception {
-        // given
-        int[] seq = generateSequence(1);
-        int[] seqCopy = seq.clone();
-        int value = getElementNotIncludedInSequence(seq);
-
-        // when
-        SearchResult searchResult = BinarySearch.search(value, seq);
-
-        //then
-        assertThat(searchResult.getPosition(), is(equalTo(POSITION_NOT_FOUND)));
-        assertThat(searchResult.isFound(), is(equalTo(IS_FOUND_FAIL)));
-        assertThat(seq, is(equalTo(seqCopy)));
-    }
-
-    @Test
     public void shouldFindFirstElementSeqLongerThanOne() throws Exception {
         // given
         int[] seq = generateSequence(SEQUENCE_SIZE);
